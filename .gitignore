@@ -1,0 +1,17 @@
+# Rules for generated and installed files (WordPress core, Composer, npm,
+# build output) are added together with the tool that creates them.
+
+# Private: never committed.
+/notes/
+/private/
+/.kandev/
+
+# Local environment markers.
+/.ddev-url
+
+# Operating system and editor files.
+.DS_Store
+Thumbs.db
+*.swp
+/.idea/
+/.vscode/
