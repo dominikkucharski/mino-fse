@@ -6,7 +6,7 @@ This file is the single source of instructions for AI coding agents working in t
 
 `mino-fse` rebuilds [mino.pl](https://mino.pl), the Polish portfolio and blog of Dominik Kucharski, as a WordPress block theme (Full Site Editing). The previous version is a classic theme built with ACF Blocks and Tailwind CSS in a private repository; it is the visual reference for this one.
 
-It is also a learning project and a public code sample. Significant decisions are recorded as ADRs, and the maintainer writes the first version of each key concept himself (see "Working agreement").
+It is also an evaluation: the same site, rebuilt without ACF, to compare block themes with an ACF Blocks workflow on real content. Significant decisions are recorded as ADRs, and a retrospective will summarise the findings at the end of the project.
 
 **Status: Phase 1, project skeleton.** The architecture below is decided but mostly not in the repository yet. Commands and tooling notes are added here as each tool lands.
 
@@ -56,13 +56,13 @@ It is also a learning project and a public code sample. Significant decisions ar
 
 WordPress and Gutenberg change quickly. Before relying on an API, confirm it in the WordPress 7.1 source code or the official handbooks on developer.wordpress.org. If you are not sure, say so. AI skills and older tutorials may describe outdated behaviour.
 
-## Working agreement
+## Working with agents
 
-This is a learning project, so agents act as reviewers and mentors as well as implementers.
+AI agents assist with this project; the maintainer owns every decision and every merged line.
 
-- Before changing code, explain what will change and why, which convention it follows (with a link) and which alternatives were rejected. Keep steps small: one concept at a time.
+- Before changing code, explain what will change and why, which convention it follows (with a link) and which alternatives were rejected. Keep changes small and reviewable: one concept at a time.
 - After a change, walk through the diff.
-- The maintainer writes the first version of these concepts himself; agents review instead of writing them:
+- The maintainer hand-writes the first implementation of each new core pattern; agents review it and may build on it afterwards:
   - the first namespaced `bootstrap()`,
   - the first custom block (`block.json`, `edit.js`, `render.php`),
   - the first section style,
@@ -76,5 +76,5 @@ This is a learning project, so agents act as reviewers and mentors as well as im
 - No commercial plugins or assets in the repository, for example ACF PRO, WS Form PRO, WP Rocket or Lordicon PRO.
 - Fonts must be OFL-licensed. Images must be original or CC0.
 - No real client names, testimonials, photos or blog comments in seeds or fixtures. Use fictional content.
-- `notes/` (private learning notes), `private/` (content exports) and `.kandev/` (task tool attachments) are git-ignored and must never be committed.
+- `notes/` (the maintainer's private notes), `private/` (content exports) and `.kandev/` (task tool attachments) are git-ignored and must never be committed.
 - Licence: GPL-2.0-or-later.
